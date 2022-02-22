@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import widgets from '@/../widgets';
 import _ from 'lodash';
 import classnames from 'classnames';
-import { Button, Input, Result,notification } from 'antd';
+import { Button, Input, Result, notification, Modal } from 'antd';
 import {
   AppstoreAddOutlined,
   PlusOutlined,
@@ -11,11 +11,15 @@ import {
   CopyOutlined,
 } from '@ant-design/icons';
 import './index.less';
-import {copy} from '@/utils/utils'
+import { copy } from '@/utils/utils';
+import Detail from '../detail';
 
 const { Search } = Input;
+
 const StoreList = () => {
   const [keywords, setKeywords] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [activeItem, setActiveItem] = useState<any>(false);
 
   const finWidgets = useMemo(() => {
     const finData = _.cloneDeep(widgets);
@@ -38,95 +42,120 @@ const StoreList = () => {
     return finData;
   }, [widgets, keywords]);
 
-  const copyWidget = (item,key) => {
-    console.log(item,key)
-    const ID = key.toLowerCase()
+  const copyWidget = (item: any, key: string) => {
+    console.log(item, key);
+    const ID = key.toLowerCase();
     copy(ID);
     notification['success']({
       message: '拷贝成功',
-      description:`请粘贴此ID至步骤 widgets-cli > fetchOne > ${ID}`,
+      description: `请粘贴此ID至步骤 widgets-cli > fetchOne > ${ID}`,
     });
-
   };
+
+  const onWidgetClick = (item:any, key:string)=>{
+    setActiveItem({...item,key})
+    setIsModalVisible(true)
+
+  }
+
+  const handleCancel = ()=>{
+    setIsModalVisible(false)
+  }
 
   const keys = Object.keys(finWidgets);
 
-
-
   return (
-    <div>
-      <div style={{ margin: ' 50px 100px ' }}>
-        <Search
-          placeholder="请输入关键字"
-          onChange={(e) => setKeywords(e.target.value)}
-          enterButton
-          size="large"
-          value={keywords}
-        />
-      </div>
-      {!_.isEmpty(keys) ? (
-        <div
-          className="react-dashboard-widget-waterfall"
-          style={{ columnCount: 4, padding: 20 }}
-        >
-          {keys.map((key) => {
-            const item = finWidgets[key];
-            return (
-              <div
-                key={key}
-                className={classnames('react-dashboard-widget-item')}
-                style={{
-                  display: 'block',
-                }}
-              >
-                <img
-                  src={item['snapShot']}
-                  className={'react-dashboard-widget-shortcut'}
-                />
-                <div className={'react-dashboard-widget-bottombar'}>
-                  <div
-                    className={'react-dashboard-widget-iconWrap'}
-                    style={{
-                      backgroundColor: _.get(widgets, key + '.iconBackground'),
-                      backgroundImage: _.get(widgets, key + '.iconBackground'),
-                    }}
-                  >
-                    {item.icon}
-                  </div>
-                  <div className={'react-dashboard-widget-name'}>
-                    {item.name}
-                  </div>
-                  <div className={'react-dashboard-widget-description'}>
-                    {item.description}
-                  </div>
-                </div>
-                <div className={'react-dashboard-widget-mask'}>
-                  <Button
-                    type="primary"
-                    shape="circle"
-                    icon={<CopyOutlined />}
-                    size="large"
-                    onClick={() => copyWidget(item, key)}
-                  >
-                    拷贝ID
-                  </Button>
-                </div>
-              </div>
-            );
-          })}
+    <>
+      <div>
+        <div style={{ margin: ' 50px 100px ' }}>
+          <Search
+            placeholder="请输入关键字"
+            onChange={(e: any) => setKeywords(e.target.value)}
+            enterButton
+            size="large"
+            value={keywords}
+          />
         </div>
-      ) : (
-        <Result
-          icon={<SmileOutlined />}
-          title="Sorry! Nothing has been matched yet"
-          extra={
-            <Button type="primary" onClick={() => setKeywords('')}>
-              全部
-            </Button>
-          }
-        />
-      )}
-    </div>
+        {!_.isEmpty(keys) ? (
+          <div
+            className="react-dashboard-widget-waterfall"
+            style={{ columnCount: 4, padding: 20 }}
+          >
+            {keys.map((key) => {
+              const item = finWidgets[key];
+              return (
+                <div
+                  key={key}
+                  className={classnames('react-dashboard-widget-item')}
+                  style={{
+                    display: 'block',
+                  }}
+                >
+                  <img
+                    src={item['snapShot']}
+                    className={'react-dashboard-widget-shortcut'}
+                  />
+                  <div className={'react-dashboard-widget-bottombar'}>
+                    <div
+                      className={'react-dashboard-widget-iconWrap'}
+                      style={{
+                        backgroundColor: _.get(
+                          widgets,
+                          key + '.iconBackground',
+                        ),
+                        backgroundImage: _.get(
+                          widgets,
+                          key + '.iconBackground',
+                        ),
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div className={'react-dashboard-widget-name'}>
+                      {item.name}
+                    </div>
+                    <div className={'react-dashboard-widget-description'}>
+                      {item.description}
+                    </div>
+                  </div>
+                  <div className={'react-dashboard-widget-mask'}>
+                    <Button
+                      type="primary"
+                      shape="circle"
+                      icon={<CopyOutlined />}
+                      size="large"
+                      onClick={() => onWidgetClick(item, key)}
+                    >
+                      查看
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <Result
+            icon={<SmileOutlined />}
+            title="Sorry! Nothing has been matched yet"
+            extra={
+              <Button type="primary" onClick={() => setKeywords('')}>
+                全部
+              </Button>
+            }
+          />
+        )}
+      </div>
+      <Modal
+        title={activeItem.name}
+        visible={isModalVisible}
+        onCancel={handleCancel}
+        wrapClassName={'modal-radius'}
+        width={800}
+        footer={null}
+      >
+        <Detail widget={activeItem}/>
+      </Modal>
+    </>
   );
 };
 

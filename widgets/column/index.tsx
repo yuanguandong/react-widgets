@@ -20,4 +20,5 @@ export default {
     minWidth: 2,
     minHeight: 4,
   },
+  author:'Favori'
 }

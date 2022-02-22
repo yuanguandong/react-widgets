@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  
+
   .react-dashboard-widget-Badge {
     .ant-badge-count {
       color: var(--text-color);
@@ -67,16 +67,19 @@
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
+    // -webkit-backdrop-filter: blur(30px);
+    // backdrop-filter: blur(5px);
   }
 
   &:hover {
     transition: all 0.3s;
 
-    border: 1px solid var(--component-background-3);
+    // border: 1px solid var(--component-background-3);
 
     .react-dashboard-widget-mask {
       opacity: 1;
       transition: all 0.3s;
+      
     }
   }
 
@@ -110,5 +113,12 @@
     .react-dashboard-widget-description {
       margin-top: 5px;
     }
+  }
+}
+
+.modal-radius {
+  .ant-modal-content {
+    border-radius: 10px;
+    overflow: hidden;
   }
 }

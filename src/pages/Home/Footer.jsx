@@ -21,7 +21,7 @@ function Footer() {
               </div>
               <div>
                 <a target="_blank " href="https://github.com/yuanguandong/widgets-cli">
-                  Widget CLI
+                  Widgets CLI
                 </a>
               </div>
             </div>
