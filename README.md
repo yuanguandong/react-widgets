@@ -3,7 +3,7 @@ react-widgets, 需结合react-dashboard-pro使用，依赖了antd, 使用了ts�
 
 需结合 [react-dashboard-pro](https://github.com/yuanguandong/react-dashboard-pro) 使用
 
-![image](https://github.com/yuanguandong/react-widgets/blob/master/snapshot.jpg?raw=true)
+![image](./shapshot.jpg)
 
 ## todo
 ☑️ widget-cli
