@@ -4,7 +4,7 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Parallax from 'rc-scroll-anim/lib/ScrollParallax';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-
+import StoreList from '@/components/storelist'
 const { TweenOneGroup } = TweenOne;
 
 const featuresCN = [
@@ -184,7 +184,7 @@ class Page1 extends React.PureComponent {
       </QueueAnim>
     ));
     return (
-      <div className="home-page page1" >
+      <div className="home-page page1" id="store">
         <div className="home-page-wrapper" id="page1-wrapper">
           {!this.props.isMobile && (
             <Parallax
@@ -192,16 +192,16 @@ class Page1 extends React.PureComponent {
               animation={{ translateY: 200, ease: 'linear', playScale: [0, 1.65] }}
               location="page1-wrapper"
             >
-              Feature
+              Store
             </Parallax>
           )}
-          <h2>What can <span>Pro</span> do for you </h2>
+          <h2>What's<span></span> in the store </h2>
           <div className="title-line-wrapper page1-line">
             <div className="title-line" />
           </div>
-          <OverPack>
-            {children}
-          </OverPack>
+          <div >
+            <StoreList/>
+          </div>
         </div>
       </div>
     );

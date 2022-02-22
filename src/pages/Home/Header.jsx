@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Icon, Menu, Button, Popover } from 'antd';
 
 import { enquireScreen } from 'enquire-js';
-
+import packageInfo from '@/config'
 const LOGO_URL = 'https://gw.alipayobjects.com/zos/rmsportal/gVAKqIsuJCepKNbgbSwE.svg';
 
 class Header extends React.Component {
@@ -23,23 +23,14 @@ class Header extends React.Component {
     const menu = (
       <Menu mode={menuMode} id="nav" key="nav">
         <Menu.Item key="home">
-          <a>首页</a>
+          <a href="#">首页</a>
         </Menu.Item>
         <Menu.Item key="docs">
-          <a><span>文档</span></a>
+          <a href="#store"><span>商店</span></a>
         </Menu.Item>
         <Menu.Item key="components">
-          <a>组件</a>
+          <a href="#cli">CLI</a>
         </Menu.Item>
-        {
-          menuMode === 'inline' && (
-            <Menu.Item key="preview">
-              <a target="_blank" href="http://preview.pro.ant.design/" rel="noopener noreferrer">
-                预览
-              </a>
-            </Menu.Item>
-          )
-        }
       </Menu>
     );
 
@@ -64,9 +55,9 @@ class Header extends React.Component {
         ) : null}
         <Row>
           <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
-            <div id="logo" to="/">
-              <img src={LOGO_URL} alt="logo" />
-              <span>ANT DESIGN PRO</span>
+            <div id="logo" to="/" style={{display:'flex',alignItems:'center'}}>
+              <span style={{fontSize:28,color:'#000'}}>{packageInfo.symbol}</span>
+              <span style={{marginLeft:10,fontWeight: 'bold',color:'#000'}}>REACT WIDGETS</span>
             </div>
           </Col>
           <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
@@ -75,11 +66,11 @@ class Header extends React.Component {
                 <a
                   id="preview-button"
                   target="_blank"
-                  href="http://preview.pro.ant.design"
+                  href="https://yuanguandong.github.io/react-dashboard-pro/"
                   rel="noopener noreferrer"
                 >
-                  <Button icon="eye-o">
-                    预览
+                  <Button>
+                    React Dashboard Pro
                   </Button>
                 </a>
               </div>

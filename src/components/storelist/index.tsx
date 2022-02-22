@@ -1,0 +1,133 @@
+import React, { useMemo, useState, useEffect } from 'react';
+import widgets from '@/../widgets';
+import _ from 'lodash';
+import classnames from 'classnames';
+import { Button, Input, Result,notification } from 'antd';
+import {
+  AppstoreAddOutlined,
+  PlusOutlined,
+  SearchOutlined,
+  SmileOutlined,
+  CopyOutlined,
+} from '@ant-design/icons';
+import './index.less';
+import {copy} from '@/utils/utils'
+
+const { Search } = Input;
+const StoreList = () => {
+  const [keywords, setKeywords] = useState('');
+
+  const finWidgets = useMemo(() => {
+    const finData = _.cloneDeep(widgets);
+    Object.keys(finData).map((key) => {
+      //菜单切换
+      // if (finData[key]['tags'].indexOf(activeMenuKey) < 0 && activeMenuKey) {
+      //   finData[key].visible = false;
+      // }
+      //查询
+      if (
+        finData[key]['name'].toLowerCase().indexOf(keywords.toLowerCase()) <
+          0 &&
+        finData[key]['description']
+          .toLowerCase()
+          .indexOf(keywords.toLowerCase()) < 0
+      ) {
+        delete finData[key];
+      }
+    });
+    return finData;
+  }, [widgets, keywords]);
+
+  const copyWidget = (item,key) => {
+    console.log(item,key)
+    const ID = key.toLowerCase()
+    copy(ID);
+    notification['success']({
+      message: '拷贝成功',
+      description:`请粘贴此ID至步骤 widgets-cli > fetchOne > ${ID}`,
+    });
+
+  };
+
+  const keys = Object.keys(finWidgets);
+
+
+
+  return (
+    <div>
+      <div style={{ margin: ' 50px 100px ' }}>
+        <Search
+          placeholder="请输入关键字"
+          onChange={(e) => setKeywords(e.target.value)}
+          enterButton
+          size="large"
+          value={keywords}
+        />
+      </div>
+      {!_.isEmpty(keys) ? (
+        <div
+          className="react-dashboard-widget-waterfall"
+          style={{ columnCount: 4, padding: 20 }}
+        >
+          {keys.map((key) => {
+            const item = finWidgets[key];
+            return (
+              <div
+                key={key}
+                className={classnames('react-dashboard-widget-item')}
+                style={{
+                  display: 'block',
+                }}
+              >
+                <img
+                  src={item['snapShot']}
+                  className={'react-dashboard-widget-shortcut'}
+                />
+                <div className={'react-dashboard-widget-bottombar'}>
+                  <div
+                    className={'react-dashboard-widget-iconWrap'}
+                    style={{
+                      backgroundColor: _.get(widgets, key + '.iconBackground'),
+                      backgroundImage: _.get(widgets, key + '.iconBackground'),
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div className={'react-dashboard-widget-name'}>
+                    {item.name}
+                  </div>
+                  <div className={'react-dashboard-widget-description'}>
+                    {item.description}
+                  </div>
+                </div>
+                <div className={'react-dashboard-widget-mask'}>
+                  <Button
+                    type="primary"
+                    shape="circle"
+                    icon={<CopyOutlined />}
+                    size="large"
+                    onClick={() => copyWidget(item, key)}
+                  >
+                    拷贝ID
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <Result
+          icon={<SmileOutlined />}
+          title="Sorry! Nothing has been matched yet"
+          extra={
+            <Button type="primary" onClick={() => setKeywords('')}>
+              全部
+            </Button>
+          }
+        />
+      )}
+    </div>
+  );
+};
+
+export default StoreList;

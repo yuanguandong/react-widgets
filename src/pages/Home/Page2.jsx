@@ -5,28 +5,27 @@ import { Button } from 'antd';
 
 function Page2() {
   return (
-    <div className="home-page page2">
+    <div className="home-page page2" id="cli">
       <div className="home-page-wrapper">
         <div className="title-line-wrapper page2-line">
           <div className="title-line" />
         </div>
-        <h2>Let’s <span>Pro</span></h2>
+        <h2>Let’s use <span>CLI</span></h2>
         <OverPack>
           <QueueAnim key="queue" type="bottom" leaveReverse className="page2-content">
             <p key="p" className="page-content">
-              命令行运行下列命令，快速启动开发服务：
+              命令行运行下列命令，使用CLI服务：
             </p>
             <div key="code1" className="home-code">
               <div>
-                $ <span>git clone</span> git@github.com:ant-design/ant-design-pro.git --depth=1
+                $ <span>npm i </span>widgets-cli -D
               </div>
-              <div>$ cd ant-design-pro</div>
-              <div>$ npm install</div>
+
               <div>
-                $ npm start
-                <span className="home-code-comment">
-                  // 打开浏览器访问 http://localhost:8000
-                </span>
+                $ npx widget-cli  
+                {/* <span className="home-code-comment">
+                  // CLI文档 https://github.com/yuanguandong/widgets-cli
+                </span> */}
               </div>
             </div>
             <p key="p2" className="page-content">
@@ -34,11 +33,11 @@ function Page2() {
               <a> 开发文档 </a>
               和
               <a> 常见问题 </a>， 如果未能解决，可以到 GitHub 上
-              <a href="https://github.com/ant-design/ant-design-pro/issues"> 进行提问 </a>。
+              <a href="https://github.com/yuanguandong/widgets-cli/issues" target="_blank"> 进行提问 </a>。
             </p>
             <div key="button" style={{ marginTop: 88 }}>
-              <a href="http://github.com/ant-design/ant-design-pro" target="_blank" rel="noopener noreferrer">
-                <Button type="primary">下载 Pro</Button>
+              <a href="https://github.com/yuanguandong/widgets-cli" target="_blank" rel="noopener noreferrer">
+                <Button type="primary">CLI文档</Button>
               </a>
             </div>
           </QueueAnim>

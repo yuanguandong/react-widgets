@@ -11,8 +11,12 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": ["src/.umi/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "@@/*": [
+        "src/.umi/*"
+      ]
     },
     "allowSyntheticDefaultImports": true
   },
@@ -21,7 +25,8 @@
     "src/**/*",
     "config/**/*",
     ".umirc.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "widgets"
   ],
   "exclude": [
     "node_modules",
