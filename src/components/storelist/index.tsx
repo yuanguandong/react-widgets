@@ -119,7 +119,7 @@ const StoreList = () => {
                       size="large"
                       onClick={() => onWidgetClick(item, key)}
                     >
-                      查看
+                      预览
                     </Button>
                   </div>
                 </div>
