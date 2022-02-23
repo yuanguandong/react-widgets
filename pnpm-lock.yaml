@@ -11,6 +11,7 @@ specifiers:
   classnames: ^2.3.1
   enquire-js: ^0.1.0
   gh-pages: ^1.1.0
+  husky: ^7.0.4
   lint-staged: ^10.0.7
   lodash: ^4.17.21
   moment: ^2.29.1
@@ -55,6 +56,7 @@ devDependencies:
   '@umijs/preset-react': 1.8.30_72f430e531373d548482e0e8fb1ec8d4
   '@umijs/test': 3.5.20
   gh-pages: 1.2.0
+  husky: 7.0.4
   lint-staged: 10.5.4
   prettier: 2.2.1
   typescript: 4.5.5
@@ -4950,6 +4952,12 @@ packages:
     dependencies:
       normalize-url: 1.9.1
       strip-url-auth: 1.0.1
+    dev: true
+
+  /husky/7.0.4:
+    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
+    engines: {node: '>=12'}
+    hasBin: true
     dev: true
 
   /hyphenate-style-name/1.0.4:
