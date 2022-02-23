@@ -2,7 +2,7 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   title:'React Widgets',
-  favicon: '/logo.png',
+  favicon: 'https://github.com/yuanguandong/react-widgets/blob/master/public/logo.png?raw=true',
   nodeModulesTransform: {
     type: 'none',
   },
