@@ -28,8 +28,12 @@ function Page2() {
                 </span> */}
               </div>
             </div>
+            <div style={{margin:'50px 0'}}>
+              <img src="/snapshot.jpg" alt="shapshot" style={{borderRadius:10,overflow:'hidden'}}/>
+              <p key="p2" className="page-content">在fetchOne选项里粘贴widget ID即可下载对应的widget.</p>
+            </div>
             <p key="p2" className="page-content">
-              需要帮助？请先阅读
+              如需帮助？请先阅读
               <a> 开发文档 </a>
               和
               <a> 常见问题 </a>， 如果未能解决，可以到 GitHub 上

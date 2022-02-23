@@ -9,9 +9,10 @@ import {
   SearchOutlined,
   SmileOutlined,
   CopyOutlined,
+  EyeOutlined
 } from '@ant-design/icons';
 import './index.less';
-import { copy } from '@/utils/utils';
+
 import Detail from '../detail';
 
 const { Search } = Input;
@@ -42,15 +43,7 @@ const StoreList = () => {
     return finData;
   }, [widgets, keywords]);
 
-  const copyWidget = (item: any, key: string) => {
-    console.log(item, key);
-    const ID = key.toLowerCase();
-    copy(ID);
-    notification['success']({
-      message: '拷贝成功',
-      description: `请粘贴此ID至步骤 widgets-cli > fetchOne > ${ID}`,
-    });
-  };
+  
 
   const onWidgetClick = (item:any, key:string)=>{
     setActiveItem({...item,key})
@@ -122,7 +115,7 @@ const StoreList = () => {
                     <Button
                       type="primary"
                       shape="circle"
-                      icon={<CopyOutlined />}
+                      icon={<EyeOutlined />}
                       size="large"
                       onClick={() => onWidgetClick(item, key)}
                     >
@@ -146,7 +139,7 @@ const StoreList = () => {
         )}
       </div>
       <Modal
-        title={activeItem.name}
+        title={'部件预览'}
         visible={isModalVisible}
         onCancel={handleCancel}
         wrapClassName={'modal-radius'}
