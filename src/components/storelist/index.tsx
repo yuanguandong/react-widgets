@@ -9,7 +9,8 @@ import {
   SearchOutlined,
   SmileOutlined,
   CopyOutlined,
-  EyeOutlined
+  EyeOutlined,
+  AppstoreOutlined
 } from '@ant-design/icons';
 import './index.less';
 
@@ -139,7 +140,7 @@ const StoreList = () => {
         )}
       </div>
       <Modal
-        title={'部件预览'}
+        title={<><AppstoreOutlined /> 部件预览</>}
         visible={isModalVisible}
         onCancel={handleCancel}
         wrapClassName={'modal-radius'}
