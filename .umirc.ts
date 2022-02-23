@@ -1,6 +1,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  hash:true,
   title:'React Widgets',
   favicon: 'https://github.com/yuanguandong/react-widgets/blob/master/public/logo.png?raw=true',
   nodeModulesTransform: {
