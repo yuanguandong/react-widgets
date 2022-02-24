@@ -64,7 +64,7 @@ const Detail = (props: any) => {
                 icon={<CodeOutlined />}
                 shape="round"
                 size="large"
-                href={`/dev?id=${key}`}
+                href={`${window.location. origin}${window.location. pathname}dev?id=${key}`}
                 target="_blank"
                 style={{ marginRight: 20 }}
               >
