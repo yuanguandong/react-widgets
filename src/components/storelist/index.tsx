@@ -125,7 +125,7 @@ const StoreList = (props: any) => {
                       shape="circle"
                       icon={<CodeOutlined />}
                       size="large"
-                      href={`/dev?id=${key}`}
+                      href={`${window.location. origin}${window.location. pathname}dev?id=${key}`}
                       target="_blank"
                       style={{marginTop:20}}
                     >
