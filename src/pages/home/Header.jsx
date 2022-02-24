@@ -29,6 +29,9 @@ class Header extends React.Component {
           <a href="#store"><span>商店</span></a>
         </Menu.Item>
         <Menu.Item key="components">
+          <a href="https://github.com/yuanguandong/react-widgets#%E5%8F%82%E4%B8%8E%E5%85%B1%E5%BB%BA">参与共建</a>
+        </Menu.Item>
+        <Menu.Item key="components">
           <a href="#cli">CLI</a>
         </Menu.Item>
       </Menu>
