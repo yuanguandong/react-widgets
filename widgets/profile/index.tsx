@@ -1,4 +1,4 @@
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import Panel from './component';
 import snapShot from './snapshot.png';
 import type { WidgetIF } from 'react-dashboard-pro';
@@ -9,9 +9,9 @@ export default {
   tags: ['all', 'system'],
   component: Panel,
   configComponent: null,
-  maxLength: 2,
+  maxLength: 1,
   snapShot,
-  icon: <ClockCircleOutlined />,
+  icon: <UserOutlined />,
   iconBackground: '#000',
   size: {
     defaultWidth: 2,
