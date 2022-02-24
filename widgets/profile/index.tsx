@@ -15,11 +15,11 @@ export default {
   iconBackground: '#000',
   size: {
     defaultWidth: 2,
-    defaultHeight: 8,
+    defaultHeight: 7,
     maxWidth: 3,
     maxHeight: 10,
     minWidth: 2,
-    minHeight: 4,
+    minHeight: 6,
   },
   author: 'Favori',
 } as WidgetIF;
