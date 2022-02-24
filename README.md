@@ -73,14 +73,26 @@ export default {
 
 ```ts
 //widgets/index.tsx
-export {default as Clock} from './clock';
-export {default as Column} from './column';
-export {default as Guide} from './guide';
-export {default as Popular} from './popular';
-export {default as Ring} from './ring';
-export {default as Todo} from './todo';
-// ……
-export {default as Xxx} from './xxx';
+import Clock from './clock';
+import Column from './column';
+import Guide from './guide';
+import Popular from './popular';
+import Ring from './ring';
+import Todo from './todo';
+// ...
+import Xxx from './xxx';
+
+export default {
+  Clock,
+  Column,
+  Guide,
+  Popular,
+  Ring,
+  Todo,
+  // ……
+  Xxx
+};
+
 
 ```
 
