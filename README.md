@@ -8,8 +8,79 @@ React部件商店, 可在商店中选取所需的widget, 通过widgets-cli下载
 https://yuanguandong.github.io/react-widgets/
 
 ![image](./shapshot0.jpg)
-## react dashboard pro
+## React Dashboard Pro
 需结合 [react-dashboard-pro](https://github.com/yuanguandong/react-dashboard-pro) 使用
 
 ![image](./shapshot.jpg)
+
+## 参与共建
+欢迎大家参与到widgets部件商店的建设中来 👏🏻
+
+如想要为商店贡献widget部件，请按如下规范编写导出widget,提交PR到feature分支
+
+```ts
+//interface
+export interface WidgetIF {
+  name: string;
+  description: string;
+  tags: string[];
+  component: Component | FunctionComponent;
+  configComponent: Component | FunctionComponent | null;
+  maxLength: number;
+  snapShot: ImageBitmapSource;
+  icon: ReactElement;
+  iconBackground: string;
+  size: {
+    defaultWidth: number;
+    defaultHeight: number;
+    maxWidth: number;
+    maxHeight: number;
+    minWidth: number;
+    minHeight: number;
+  };
+  [key: string]: any;
+}
+```
+
+```ts
+// 示例
+import { ClockCircleOutlined } from '@ant-design/icons';
+import Panel from './component';
+import snapShot from './snapshot.png';
+import type { WidgetIF } from 'react-dashboard-pro';
+
+export default {
+  name: 'Clock',
+  description: 'a clock',
+  tags: ['all', 'system'],
+  component: Panel,
+  configComponent: null,
+  maxLength: 2,
+  snapShot,
+  icon: <ClockCircleOutlined />,
+  iconBackground: 'blue',
+  size: {
+    defaultWidth: 4,
+    defaultHeight: 5,
+    maxWidth: 12,
+    maxHeight: 16,
+    minWidth: 2,
+    minHeight: 4,
+  },
+  author: 'Favori',
+} as WidgetIF;
+```
+
+```ts
+//widgets/index.tsx
+export {default as Clock} from './clock';
+export {default as Column} from './column';
+export {default as Guide} from './guide';
+export {default as Popular} from './popular';
+export {default as Ring} from './ring';
+export {default as Todo} from './todo';
+// ……
+export {default as Xxx} from './xxx';
+
+```
 

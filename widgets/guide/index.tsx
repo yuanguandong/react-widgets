@@ -1,6 +1,7 @@
 import { RightCircleOutlined } from '@ant-design/icons';
 import Panel from './component';
 import snapShot from './snapshot.png';
+import type { WidgetIF } from 'react-dashboard-pro';
 
 export default {
   name: 'Guide',
@@ -21,4 +22,4 @@ export default {
     minHeight: 4,
   },
   author:'Favori'
-}
+} as WidgetIF

@@ -1,11 +1,12 @@
 import { ClockCircleOutlined } from '@ant-design/icons';
 import Panel from './component';
 import snapShot from './snapshot.png';
+import type { WidgetIF } from 'react-dashboard-pro';
 
 export default {
   name: 'Clock',
   description: 'a clock',
-  tags: ['all','system'],
+  tags: ['all', 'system'],
   component: Panel,
   configComponent: null,
   maxLength: 2,
@@ -20,5 +21,5 @@ export default {
     minWidth: 2,
     minHeight: 4,
   },
-  author:'Favori'
-}
+  author: 'Favori',
+} as WidgetIF;

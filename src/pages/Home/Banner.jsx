@@ -11,8 +11,11 @@ function Banner(props) {
     <div className="banner-wrapper">
       {props.isMobile && (
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
-          <div className="home-banner-image">
-            <BannerSVGAnim {...props}/>
+          <div
+            className="home-banner-image"
+            style={{ width: '100%', height: '300px' }}
+          >
+            <BannerSVGAnim {...props} />
           </div>
         </TweenOne>
       )}
@@ -47,7 +50,7 @@ function Banner(props) {
       </QueueAnim>
       {!props.isMobile && (
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
-          <BannerSVGAnim {...props}/>
+          <BannerSVGAnim {...props} />
         </TweenOne>
       )}
     </div>
