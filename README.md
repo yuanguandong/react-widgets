@@ -16,7 +16,20 @@ https://yuanguandong.github.io/react-widgets/
 ## 参与共建
 欢迎大家参与到widgets部件商店的建设中来 👏🏻
 
-如想要为商店贡献widget部件，请按如下规范编写导出widget,提交PR到feature分支
+### 开发流程
+```bash
+# 拉取本仓库
+git clone git@github.com:yuanguandong/react-widgets.git
+# 进入项目目录
+cd react-widgets
+# 安装依赖
+npm run install
+# 新建widget,如下xxxx为widget ID
+npm run create xxxx
+```
+
+### 规范
+请按如下规范编写导出widget,提交PR到feature分支
 
 ```ts
 //interface
@@ -42,6 +55,7 @@ export interface WidgetIF {
 }
 ```
 
+### 示例
 ```ts
 // 示例
 import { ClockCircleOutlined } from '@ant-design/icons';
