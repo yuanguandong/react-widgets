@@ -12,11 +12,7 @@ function Banner(props) {
       {props.isMobile && (
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
           <div className="home-banner-image">
-            <img
-              alt="banner"
-              src="https://gw.alipayobjects.com/zos/rmsportal/rqKQOpnMxeJKngVvulsF.svg"
-              width="100%"
-            />
+            <BannerSVGAnim {...props}/>
           </div>
         </TweenOne>
       )}
@@ -51,7 +47,7 @@ function Banner(props) {
       </QueueAnim>
       {!props.isMobile && (
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
-          <BannerSVGAnim />
+          <BannerSVGAnim {...props}/>
         </TweenOne>
       )}
     </div>

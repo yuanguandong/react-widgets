@@ -29,7 +29,7 @@ function Page2() {
               </div>
             </div>
             <div style={{margin:'50px 0'}}>
-              <img src="https://github.com/yuanguandong/widgets-cli/blob/main/snapshot.jpg?raw=true" alt="shapshot" style={{borderRadius:10,overflow:'hidden'}}/>
+              <img style={{maxWidth:'100%'}} src="https://github.com/yuanguandong/widgets-cli/blob/main/snapshot.jpg?raw=true" alt="shapshot" style={{borderRadius:10,overflow:'hidden'}}/>
               <p key="p2" className="page-content">在fetchOne选项里粘贴widget ID即可下载对应的widget.</p>
             </div>
             <p key="p2" className="page-content">

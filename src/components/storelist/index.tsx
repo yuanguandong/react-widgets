@@ -10,7 +10,7 @@ import {
   SmileOutlined,
   CopyOutlined,
   EyeOutlined,
-  AppstoreOutlined
+  AppstoreOutlined,
 } from '@ant-design/icons';
 import './index.less';
 
@@ -18,7 +18,8 @@ import Detail from '../detail';
 
 const { Search } = Input;
 
-const StoreList = () => {
+const StoreList = (props: any) => {
+  const { isMobile } = props;
   const [keywords, setKeywords] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [activeItem, setActiveItem] = useState<any>(false);
@@ -44,24 +45,21 @@ const StoreList = () => {
     return finData;
   }, [widgets, keywords]);
 
-  
+  const onWidgetClick = (item: any, key: string) => {
+    setActiveItem({ ...item, key });
+    setIsModalVisible(true);
+  };
 
-  const onWidgetClick = (item:any, key:string)=>{
-    setActiveItem({...item,key})
-    setIsModalVisible(true)
-
-  }
-
-  const handleCancel = ()=>{
-    setIsModalVisible(false)
-  }
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   const keys = Object.keys(finWidgets);
 
   return (
     <>
       <div>
-        <div style={{ margin: ' 50px 100px ' }}>
+        <div style={{ margin: ' 50px 50px ' }}>
           <Search
             placeholder="请输入关键字"
             onChange={(e: any) => setKeywords(e.target.value)}
@@ -73,7 +71,7 @@ const StoreList = () => {
         {!_.isEmpty(keys) ? (
           <div
             className="react-dashboard-widget-waterfall"
-            style={{ columnCount: 4, padding: 20 }}
+            style={{ columnCount: isMobile ? 1 : 4, padding: 20 }}
           >
             {keys.map((key) => {
               const item = finWidgets[key];
@@ -140,14 +138,18 @@ const StoreList = () => {
         )}
       </div>
       <Modal
-        title={<><AppstoreOutlined /> 部件预览</>}
+        title={
+          <>
+            <AppstoreOutlined /> 部件预览
+          </>
+        }
         visible={isModalVisible}
         onCancel={handleCancel}
         wrapClassName={'modal-radius'}
         width={800}
         footer={null}
       >
-        <Detail widget={activeItem}/>
+        <Detail widget={activeItem} />
       </Modal>
     </>
   );

@@ -200,7 +200,7 @@ class Page1 extends React.PureComponent {
             <div className="title-line" />
           </div>
           <div >
-            <StoreList/>
+            <StoreList {...this.props}/>
           </div>
         </div>
       </div>
