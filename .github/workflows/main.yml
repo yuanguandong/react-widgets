@@ -32,10 +32,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Deploy with gh-pages
         run: |
-          git remote set-url origin https://git:${ACTIONS_DEPLOY_KEY}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "yuanguandong <995749721@qq.com>"
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # 部署到github pages
       # - name: Deploy to gh-pages
       #   uses: peaceiris/actions-gh-pages@v3
