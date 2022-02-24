@@ -1,7 +1,11 @@
 import styles from './index.less';
 import { Button, Tag, notification, Typography } from 'antd';
 import React from 'react';
-import { InfoCircleOutlined, SmileOutlined } from '@ant-design/icons';
+import {
+  InfoCircleOutlined,
+  SmileOutlined,
+  CodeOutlined,
+} from '@ant-design/icons';
 import { copy } from '@/utils/utils';
 const { Text, Link } = Typography;
 const Detail = (props: any) => {
@@ -27,7 +31,7 @@ const Detail = (props: any) => {
       description: (
         <>
           <div>请粘贴此ID至widgets-cli</div>
-          <div style={{marginTop:10}}>
+          <div style={{ marginTop: 10 }}>
             <Text code>fetchOne</Text>
           </div>
         </>
@@ -54,13 +58,28 @@ const Detail = (props: any) => {
                 <Tag>{item}</Tag>
               ))}
             </div>
-            <Button
-              type="primary"
-              icon={<SmileOutlined />}
-              onClick={copyWidget}
-            >
-              获取ID
-            </Button>
+            <span>
+              <Button
+                // type="primary"
+                icon={<CodeOutlined />}
+                shape="round"
+                size="large"
+                href={`/dev?id=${key}`}
+                target="_blank"
+                style={{ marginRight: 20 }}
+              >
+                开发
+              </Button>
+              <Button
+                type="primary"
+                icon={<SmileOutlined />}
+                onClick={copyWidget}
+                shape="round"
+                size="large"
+              >
+                获取ID
+              </Button>
+            </span>
           </div>
         </div>
       </div>

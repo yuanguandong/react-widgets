@@ -3,7 +3,7 @@ React部件商店, 可在商店中选取所需的widget, 通过widgets-cli下载
 
 开发者可以在商店中选用各种所需的widget进行二次开发。
 
-目前多数widget依赖了antd, 使用了ts、less
+目前多数widget依赖了antd, 使用了ts、less、css module
 ## 部件商店
 https://yuanguandong.github.io/react-widgets/
 
@@ -11,7 +11,7 @@ https://yuanguandong.github.io/react-widgets/
 ## React Dashboard Pro
 需结合 [react-dashboard-pro](https://github.com/yuanguandong/react-dashboard-pro) 使用
 
-![image](./shapshot.jpg)
+
 
 ## 参与共建
 欢迎大家参与到widgets部件商店的建设中来 👏🏻
@@ -20,16 +20,36 @@ https://yuanguandong.github.io/react-widgets/
 ```bash
 # 拉取本仓库
 git clone git@github.com:yuanguandong/react-widgets.git
+
 # 进入项目目录
 cd react-widgets
+
 # 安装依赖
 npm run install
-# 新建widget,如下xxxx为widget ID
+
+# 新建widget
 npm run create xxxx
+
+# xxxx为新增的widget ID, 全小写命名
+
+# 从统一入口widgets/index.tsx中导出
+# import xxx from './xxx';
+# export default {
+#   // ……
+#   xxx
+# };
+
+# 启动项目
+npm run start
+
+# 访问DEV PAGE
+# localhost:8000/dev?id=xxxx
+
+# 开发完成，提交PR到feature分支
 ```
 
 ### 规范
-请按如下规范编写导出widget,提交PR到feature分支
+请按如下规范编写导出widget
 
 ```ts
 //interface
@@ -56,8 +76,9 @@ export interface WidgetIF {
 ```
 
 ### 示例
+部件定义
 ```ts
-// 示例
+// widgets/clock/index.tsx
 import { ClockCircleOutlined } from '@ant-design/icons';
 import Panel from './component';
 import snapShot from './snapshot.png';
@@ -85,28 +106,14 @@ export default {
 } as WidgetIF;
 ```
 
+在统一入口中导出
 ```ts
 //widgets/index.tsx
-import Clock from './clock';
-import Column from './column';
-import Guide from './guide';
-import Popular from './popular';
-import Ring from './ring';
-import Todo from './todo';
 // ...
-import Xxx from './xxx';
-
+import xxx from './xxx';
 export default {
-  Clock,
-  Column,
-  Guide,
-  Popular,
-  Ring,
-  Todo,
   // ……
-  Xxx
+  xxx
 };
-
-
 ```
 

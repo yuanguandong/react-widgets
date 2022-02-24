@@ -11,6 +11,7 @@ import {
   CopyOutlined,
   EyeOutlined,
   AppstoreOutlined,
+  CodeOutlined
 } from '@ant-design/icons';
 import './index.less';
 
@@ -119,6 +120,16 @@ const StoreList = (props: any) => {
                       onClick={() => onWidgetClick(item, key)}
                     >
                       预览
+                    </Button>
+                    <Button
+                      shape="circle"
+                      icon={<CodeOutlined />}
+                      size="large"
+                      href={`/dev?id=${key}`}
+                      target="_blank"
+                      style={{marginTop:20}}
+                    >
+                      开发
                     </Button>
                   </div>
                 </div>

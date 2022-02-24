@@ -1,7 +1,7 @@
 import widgets from '@/../widgets';
 import React, { useMemo, useEffect, useState } from 'react';
 import { Result, Button, Slider, Radio } from 'antd';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined, GithubOutlined } from '@ant-design/icons';
 import styles from './index.less';
 import { SketchPicker } from 'react-color';
 
@@ -121,16 +121,25 @@ export default (props: any) => {
             <Radio.Button value="c">弥散阴影一</Radio.Button>
             <Radio.Button value="d">弥散阴影二</Radio.Button>
           </Radio.Group>
+
           <Button
-            href="https://github.com/yuanguandong/react-widgets"
+            href={`https://github1s.com/yuanguandong/react-widgets/blob/feature/widgets/${id}/index.tsx`}
             target="_blank"
-            type="link"
-            // shape="round"
-            size="small"
-            icon={'👉  '}
+            shape="round"
+            icon={<GithubOutlined />}
             style={{ margin: '20px 0' }}
           >
-            ·  部件开发规范
+            云端开发
+          </Button>
+
+          <Button
+            href="https://github.com/yuanguandong/react-widgets#参与共建"
+            target="_blank"
+            type="link"
+            size="small"
+            icon={'👉  '}
+          >
+            开发流程
           </Button>
         </div>
       </div>

@@ -1,59 +1,61 @@
 .top {
   display: flex;
-  align-items:center;
-  padding-bottom:20px;
+  align-items: center;
+  padding-bottom: 20px;
   .icon {
-    width:100px;
-    height:100px;
-    color:#fff;
-    border-radius:20px;
-    font-size:60px;
-    text-align:center;
-    line-height:100px;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 60px;
+    text-align: center;
+    line-height: 100px;
   }
   .desc {
-    padding-left:20px;
-    flex:1;
+    padding-left: 20px;
+    flex: 1;
     .title {
-      font-size:32px;
+      font-size: 32px;
       font-weight: bold;
     }
     .info {
-      font-size:14px;
-      color:rgba(128,128,128);
+      font-size: 14px;
+      color: rgba(128, 128, 128);
     }
-    .bar{
-      margin:10px 0px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    .bar {
+      margin: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       .tags {
-        
       }
     }
-    
   }
-  border-bottom:1px solid rgba(128,128,128,0.3);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 .content {
-  padding:50px 20px;
-  .widgetWrap{
-    margin:0 auto;
-    border:1px solid rgba(128,128,128,0.3);
-    border-radius:10px;
+  padding: 50px 20px;
+  .widgetWrap {
+    margin: 0 auto;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(128,128,128,0.3);
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s;
+    }
   }
-  
 }
 .bottom {
   display: flex;
-  justify-content:space-between;
-  align-items:center;
-  .length{
-    color:rgba(128,128,128,0.7);
+  justify-content: space-between;
+  align-items: center;
+  .length {
+    color: rgba(128, 128, 128, 0.7);
   }
-  .author{
-    color:rgba(128,128,128,0.7);
+  .author {
+    color: rgba(128, 128, 128, 0.7);
   }
 }

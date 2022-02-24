@@ -2,7 +2,10 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   hash: true,
-  antd:{},
+  antd: {},
+  theme: {
+    'primary-color': '#2c3ff1',
+  },
   title: 'React Widgets',
   favicon:
     'https://github.com/yuanguandong/react-widgets/blob/master/public/logo.png?raw=true',
