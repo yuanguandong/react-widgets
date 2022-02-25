@@ -7,6 +7,7 @@ import popular from './popular';
 import ring from './ring';
 import todo from './todo';
 import profile from './profile';
+import carousel from './carousel';
 
 export default {
   clock,
@@ -16,4 +17,5 @@ export default {
   ring,
   todo,
   profile,
+  carousel,
 } as WidgetsIF;

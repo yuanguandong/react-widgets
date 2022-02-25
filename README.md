@@ -45,7 +45,7 @@ npm run start
 # 访问DEV PAGE
 # localhost:8000#dev?id=xxxx
 
-# 开发完成，提交PR到feature分支
+# 开发完成，截图替换掉snapshot.png，提交PR到feature分支
 
 # PR合并通过后会自动部署到部件商店
 ```

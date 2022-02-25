@@ -42,7 +42,7 @@ export default (props: any) => {
   const { defaultWidth, defaultHeight } = size;
 
   const widgetComponent = useMemo(() => {
-    if (!component) {
+    if (!component || !width || !height || !id) {
       return (
         <div
           style={{
@@ -90,8 +90,8 @@ export default (props: any) => {
       setWidget(widgets[id]);
       const width = defaultWidth * 100;
       const height = defaultHeight * 40 > 760 ? 760 : defaultHeight * 40;
-      setWidth(width);
-      setHeight(height);
+      width && setWidth(width);
+      height && setHeight(height);
     }
   }, [id, defaultWidth, defaultHeight]);
 
