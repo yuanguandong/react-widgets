@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Icon, Menu, Button, Popover } from 'antd';
-
+import {goToPosition} from '@/utils/utils'
 import { enquireScreen } from 'enquire-js';
 import packageInfo from '@/config'
 const LOGO_URL = 'https://gw.alipayobjects.com/zos/rmsportal/gVAKqIsuJCepKNbgbSwE.svg';
@@ -26,13 +26,13 @@ class Header extends React.Component {
           <a href="#">首页</a>
         </Menu.Item>
         <Menu.Item key="docs">
-          <a href="#store"><span>商店</span></a>
+          <a href="javascript:void(0)" onClick={()=>goToPosition('store')}><span>商店</span></a>
+        </Menu.Item>
+        <Menu.Item key="dev">
+          <a target="_blank" href="https://github.com/yuanguandong/react-widgets#%E5%8F%82%E4%B8%8E%E5%85%B1%E5%BB%BA">参与共建</a>
         </Menu.Item>
         <Menu.Item key="components">
-          <a href="https://github.com/yuanguandong/react-widgets#%E5%8F%82%E4%B8%8E%E5%85%B1%E5%BB%BA">参与共建</a>
-        </Menu.Item>
-        <Menu.Item key="components">
-          <a href="#cli">CLI</a>
+          <a href="javascript:void(0)" onClick={()=>goToPosition('cli')}>CLI</a>
         </Menu.Item>
       </Menu>
     );

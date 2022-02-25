@@ -3,7 +3,7 @@
  *
  * @param {*} str
  */
- export const copy = (str: string) => {
+export const copy = (str: string) => {
   var save = function (e: any) {
     e.clipboardData.setData('text/plain', str);
     e.preventDefault(); //阻止默认行为
@@ -13,4 +13,12 @@
   setTimeout(() => {
     document.removeEventListener('copy', save);
   }, 1000);
+};
+
+export const goToPosition = (id) => {
+  const store = document.querySelector(`#${id}`);
+  window.scrollTo({
+    top: store.offsetTop,
+    behavior: 'smooth',
+  });
 };

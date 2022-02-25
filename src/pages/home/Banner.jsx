@@ -5,7 +5,7 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import { Button } from 'antd';
 import BannerSVGAnim from '@/components/BannerSVGAnim';
-
+import {goToPosition} from '@/utils/utils'
 function Banner(props) {
   return (
     <div className="banner-wrapper">
@@ -32,14 +32,14 @@ function Banner(props) {
         <h1 key="h1">REACT WIDGETS</h1>
         <p key="content">适用于 React Dashboard Pro 的 React 部件商店</p>
         <div key="button" className="button-wrapper">
-          <a href="#store" rel="noopener noreferrer">
-            <Button type="primary">商店</Button>
-          </a>
-          <a href="#cli" rel="noopener noreferrer">
-            <Button style={{ margin: '0 16px' }} type="primary" ghost>
+          {/* <a href="#store" rel="noopener noreferrer"> */}
+            <Button type="primary" onClick={()=>goToPosition('store')}>商店</Button>
+          {/* </a> */}
+          {/* <a href="#cli" rel="noopener noreferrer"> */}
+            <Button style={{ margin: '0 16px' }} type="primary" ghost onClick={()=>goToPosition('cli')}>
               CLI
             </Button>
-          </a>
+          {/* </a> */}
           <GitHubButton
             key="github-button"
             type="stargazers"

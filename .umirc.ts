@@ -19,4 +19,5 @@ export default defineConfig({
     { path: '/dev', component: '@/pages/dev' },
   ],
   fastRefresh: {},
+  history: { type: 'hash' },
 });

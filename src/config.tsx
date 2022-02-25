@@ -7,5 +7,5 @@ export default {
   authorHomePage:'https://github.com/yuanguandong',
   homePageUrl: 'https://github.com/yuanguandong/react-widgets',
   symbol:<RiDashboardFill/>,
-  widgetRepository:'https://github.com/yuanguandong/react-widgets'
+  widgetRepository:'https://github.com/yuanguandong/react-widgets',
 }
