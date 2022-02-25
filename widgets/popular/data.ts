@@ -92,8 +92,9 @@
 //   },
 // ];
 
+export const bannerSrc = `https://cdn.dribbble.com/users/1723105/screenshots/16326363/media/bfe7e98aada92660443c68d330754b86.png?compress=1&resize=400x300`
 
-export const List = [
+export const dataSource = [
   {
     id: 1,
     img: 'https://cdn.dribbble.com/users/1319260/screenshots/16329726/media/c3f00d832cdeb482cba52a6a473d88a0.png?compress=1&resize=400x300',

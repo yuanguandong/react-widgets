@@ -43,9 +43,11 @@ npm run create xxxx
 npm run start
 
 # 访问DEV PAGE
-# localhost:8000/dev?id=xxxx
+# localhost:8000#dev?id=xxxx
 
 # 开发完成，提交PR到feature分支
+
+# PR合并通过后会自动部署到部件商店
 ```
 
 ### 规范

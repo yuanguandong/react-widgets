@@ -5,7 +5,7 @@ import {
 } from '@ant-design/icons';
 import _ from 'lodash';
 import React, { useState } from 'react';
-import { List } from './data';
+import { dataSource,bannerSrc } from './data';
 import './index.less';
 
 const widgetName = 'Popular';
@@ -36,14 +36,14 @@ const Widget = (props: any) => {
         className={widgetClassName + '-hero'}
         style={{
           backgroundImage:
-            'url(https://hbimg.huabanimg.com/01308dcce96f800014c94ee8b06038db43766744109ea4-Njdiqp_fw658/format/webp)',
+            `url(${bannerSrc})`,
           opacity: activeItem ? 0 : 1,
           height: activeItem ? 0 : 200,
           marginBottom: activeItem ? 0 : 10,
         }}
       ></div>
       <div className={widgetClassName + '-list'}>
-        {List.map((item) => (
+        {dataSource.map((item) => (
           <div
             className={widgetClassName + '-item'}
             key={item.id}
