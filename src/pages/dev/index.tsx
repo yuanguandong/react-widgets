@@ -1,7 +1,12 @@
 import widgets from '@/../widgets';
 import React, { useMemo, useEffect, useState } from 'react';
 import { Result, Button, Slider, Radio } from 'antd';
-import { SmileOutlined, GithubOutlined } from '@ant-design/icons';
+import {
+  SmileOutlined,
+  GithubOutlined,
+  BookOutlined,
+  HomeOutlined,
+} from '@ant-design/icons';
 import styles from './index.less';
 import { SketchPicker } from 'react-color';
 
@@ -136,10 +141,19 @@ export default (props: any) => {
               href="https://github.com/yuanguandong/react-widgets#参与共建"
               target="_blank"
               type="link"
-              size="small"
-              icon={'👉  '}
+              // size="small"
+              icon={<BookOutlined />}
             >
               开发流程
+            </Button>
+            <Button
+              href="#"
+              target="_blank"
+              type="link"
+              // size="small"
+              icon={<HomeOutlined />}
+            >
+              部件商店
             </Button>
           </div>
         </div>
