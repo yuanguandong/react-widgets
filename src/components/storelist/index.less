@@ -28,7 +28,12 @@
   &:hover {
     background: var(--component-background-3);
     font-weight: bold;
+    .react-dashboard-widget-shortcut,.react-dashboard-widget-bottombar{
+      filter:blur(10px);
+      transition: all 0.3s;
+    }
   }
+
 }
 
 .react-dashboard-widget-active {
@@ -39,20 +44,24 @@
 .react-dashboard-widget-item {
   cursor: pointer;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   // box-shadow: 0 0 0px rgba(255, 255, 255, 1);
   transition: all 0.3s;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.5);
   -webkit-column-break-inside: avoid;
   position: relative;
   background: var(--component-background);
   .react-dashboard-widget-shortcut {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    transition: all 0.3s;
   }
 
   .react-dashboard-widget-mask {
@@ -62,7 +71,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    // background: rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,39 +89,41 @@
     .react-dashboard-widget-mask {
       opacity: 1;
       transition: all 0.3s;
-      
     }
   }
-
+  @icon-size: 40px;
   .react-dashboard-widget-bottombar {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    // border-top: 1px solid rgba(128,128,128,0.5);
     width: 100%;
-
-    padding: 5px;
-
+    margin-top: 10px;
+    padding-left:5px;
+    display: flex;
+    transition: all 0.3s;
     .react-dashboard-widget-iconWrap {
       display: inline-block;
-      width: 28px;
-      height: 28px;
-      line-height: 28px;
+      width: @icon-size;
+      height: @icon-size;
+      line-height: @icon-size;
       text-align: center;
       border-radius: 7px;
       color: #fff;
       margin-right: 5px;
-      font-size: 16px;
+      font-size: 24px;
     }
-
+    .react-dashboard-widget-infowrap{
+      margin-left:10px;
+    }
     .react-dashboard-widget-name {
       font-size: 16px;
       flex: 1;
-      color: var(--text-color);
-      line-height: 28px;
+      color: #000;
+      // line-height: @icon-size;
       font-weight: bold;
       display: inline;
     }
 
     .react-dashboard-widget-description {
-      margin-top: 5px;
+      // margin-top: 5px;
     }
   }
 }

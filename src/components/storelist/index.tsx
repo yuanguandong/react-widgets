@@ -11,7 +11,7 @@ import {
   CopyOutlined,
   EyeOutlined,
   AppstoreOutlined,
-  CodeOutlined
+  CodeOutlined,
 } from '@ant-design/icons';
 import './index.less';
 
@@ -104,11 +104,13 @@ const StoreList = (props: any) => {
                     >
                       {item.icon}
                     </div>
-                    <div className={'react-dashboard-widget-name'}>
-                      {item.name}
-                    </div>
-                    <div className={'react-dashboard-widget-description'}>
-                      {item.description}
+                    <div className={'react-dashboard-widget-infowrap'}>
+                      <div className={'react-dashboard-widget-name'}>
+                        {item.name}
+                      </div>
+                      <div className={'react-dashboard-widget-description'}>
+                        {item.description}
+                      </div>
                     </div>
                   </div>
                   <div className={'react-dashboard-widget-mask'}>
@@ -125,9 +127,9 @@ const StoreList = (props: any) => {
                       shape="circle"
                       icon={<CodeOutlined />}
                       size="large"
-                      href={`${window.location. origin}${window.location. pathname}#dev?id=${key}`}
+                      href={`${window.location.origin}${window.location.pathname}#dev?id=${key}`}
                       target="_blank"
-                      style={{marginTop:20}}
+                      style={{ marginTop: 20 }}
                     >
                       开发
                     </Button>
@@ -148,6 +150,7 @@ const StoreList = (props: any) => {
           />
         )}
       </div>
+      
       <Modal
         title={
           <>
