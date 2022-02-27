@@ -1,4 +1,9 @@
 import { defineConfig } from 'umi';
+const openBrowser = require('open-browser-webpack-plugin');
+
+const {
+  id
+} = process.env;
 
 export default defineConfig({
   hash: true,
@@ -20,4 +25,9 @@ export default defineConfig({
   ],
   fastRefresh: {},
   history: { type: 'hash' },
+  chainWebpack(config) {
+    config
+      .plugin('open-browser-webpack-plugin')
+      .use(openBrowser, [{ url: `http://localhost:8000#dev?id=${id}` }]); // 此处url与项目启动的url保持一致
+  },
 });

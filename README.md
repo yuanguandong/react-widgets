@@ -7,7 +7,7 @@ React部件商店, 可在商店中选取所需的widget, 通过widgets-cli下载
 ## 部件商店
 https://yuanguandong.github.io/react-widgets/
 
-![image](./shapshot0.jpg)
+![image](./shapshot.jpg)
 ## React Dashboard Pro
 需结合 [react-dashboard-pro](https://github.com/yuanguandong/react-dashboard-pro) 使用
 

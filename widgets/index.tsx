@@ -1,5 +1,4 @@
 import type { WidgetsIF } from 'react-dashboard-pro';
-
 import clock from './clock';
 import column from './column';
 import guide from './guide';
@@ -8,7 +7,7 @@ import ring from './ring';
 import todo from './todo';
 import profile from './profile';
 import carousel from './carousel';
-
+import musicplayer from './musicplayer';
 export default {
   clock,
   column,
@@ -18,4 +17,5 @@ export default {
   todo,
   profile,
   carousel,
+  musicplayer,
 } as WidgetsIF;

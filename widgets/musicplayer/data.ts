@@ -1,0 +1,49 @@
+export default [{
+  id:'1',
+  name:`夜曲`,
+  title:`周杰伦`,
+  img:`https://myhkw.cn/api/musicPic?picId=004cPHRr3nkmJe&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500002Rdq6W0NbLQH.mp3?guid=1185367115&vkey=1BDF6301225DB3A886981EA44DCA695C503CE8DE7D027501235A8DEE6EDF536EBF348EA97BA06D8AAD2FA80F9FD2632B3DBB08E673D038D9&uin=&fromtag=66`
+},{
+  id:'2',
+  name:`夜空中最亮的星`,
+  title:`逃跑计划`,
+  img:`https://myhkw.cn/api/musicPic?picId=000wr4zc1gls3e&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500002EHg2B2FPi71.mp3?guid=198955664&vkey=1B464BA150DEE5C41FE001DC9B15B02C4166182FF399D5FD2ED8B36207F3DB59142972EFD04D158D46CD8CA088AE865D7200FB355476A3F0&uin=&fromtag=66`
+},{
+  id:'3',
+  name:`麻雀`,
+  title:`李荣浩`,
+  img:`https://myhkw.cn/api/musicPic?picId=003P3ByD1n8nBK&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500000Rhdlf3FMZag.mp3?guid=1228455816&vkey=1D6EBBBC665FFB2BDBCBAC71D2C67D3E23A91D65776761E89BEE4FBCE11B0FA813540140A8F1A3B6C71D981922F05EBF100FA4E62E36158A&uin=&fromtag=66`
+},{
+  id:'4',
+  name:`红颜`,
+  title:`胡彦斌`,
+  img:`https://myhkw.cn/api/musicPic?picId=003f2csz26yPNf&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500000fMSrV0DuZVm.mp3?guid=1987223577&vkey=E4DA7FEE4D6464A26A4E0983DAB08ECA74E2934938B63638E6E19A27E50E7EBABB919D6C334ADF7AFF092C79ED549EBD4AA40F03042AE982&uin=&fromtag=66`
+},{
+  id:'5',
+  name:`光辉岁月`,
+  title:`Beyond`,
+  img:`https://myhkw.cn/api/musicPic?picId=000Oexke1G6Idv&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500001Bhx0C44bkgH.mp3?guid=1002562466&vkey=2BC75438D54F123680A389283C7B8540C0EA84D545AE00ADDA8CE72048B101188A64BA231B6B068E84E263730DFDAEF89CFFE17ECABCB2A3&uin=&fromtag=66`
+},{
+  id:'6',
+  name:`皇帝`,
+  title:`胡彦斌`,
+  img:`https://myhkw.cn/api/musicPic?picId=001113yq0FzW3O&type=qq&size=big`,
+  audio:`https://isure.stream.qqmusic.qq.com/M500001iba7C04kT4o.mp3?guid=237842742&vkey=931C6C07EC76E958170286CBDB8392458CD5847F87B18FA62DECAE6B9E8A2CBBFC91D8679F2D652F8C2B856185134881EE2E063D5636AD21&uin=&fromtag=66`
+},{
+  id:'7',
+  name:`情人节`,
+  title:`黄淑慧`,
+  img:`https://myhkw.cn/api/musicPic?picId=ac940d4325ba7d34815afe8248820edc&type=kg&size=big`,
+  audio:`https://sharefs.ali.kugou.com/202202280010/d50ccdb3f035f0d4397d235553e6f546/KGTX/CLTX001/ac940d4325ba7d34815afe8248820edc.mp3`
+},{
+  id:'8',
+  name:`祝你快乐`,
+  title:`黄淑慧`,
+  img:`https://myhkw.cn/api/musicPic?picId=ac940d4325ba7d34815afe8248820edc&type=kg&size=big`,
+  audio:`https://sharefs.ali.kugou.com/202202280011/df2ba4cf87c3f0f86fba945967fa8a2a/KGTX/CLTX001/f56b420fcb7efa96a382903f59fb9b4f.mp3`
+}]

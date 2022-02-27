@@ -1,14 +1,25 @@
 import widgets from '@/../widgets';
 import React, { useMemo, useEffect, useState } from 'react';
-import { Result, Button, Slider, Radio } from 'antd';
+import { Result, Button, Slider, Radio, Dropdown, Menu } from 'antd';
 import {
   SmileOutlined,
   GithubOutlined,
   BookOutlined,
   HomeOutlined,
+  DownOutlined,
 } from '@ant-design/icons';
 import styles from './index.less';
 import { SketchPicker } from 'react-color';
+
+const menu = (
+  <Menu>
+    {Object.keys(widgets).map((key) => (
+      <Menu.Item icon={widgets[key].icon} key={key}>
+        <a href={`#dev?id=${key}`} style={{textDecoration:'none'}}>{key}</a>
+      </Menu.Item>
+    ))}
+  </Menu>
+);
 
 export default (props: any) => {
   const {
@@ -24,7 +35,7 @@ export default (props: any) => {
 
   const [borderRadius, setBorderRadius] = useState<number>(10);
   const [shadow, setShadow] = useState<string>('b');
-  const [shadowColor, setShadowColor] = useState<string>('rgba(0,0,0,0.5)');
+  const [shadowColor, setShadowColor] = useState<string>('rgba(0,0,0,0.2)');
 
   const {
     key,
@@ -73,16 +84,16 @@ export default (props: any) => {
 
   const handleChangeComplete = (color: any) => {
     const { r, g, b } = color.rgb;
-    const shadowColor = `rgba(${r + 50},${g + 50},${b + 50},1)`;
+    const shadowColor = `rgba(${r + 50},${g + 50},${b + 50},0.8)`;
     setBackground(color.hex);
     setShadowColor(shadowColor);
   };
 
   const shadows: any = {
-    a: `0 0 5px rgba(0,0,0,0.5)`,
-    b: `0 0 20px rgba(0,0,0,0.5)`,
-    c: `0 0 5px ${shadowColor}`,
-    d: `0 0 20px ${shadowColor}`,
+    a: `1px 1px 5px rgba(0,0,0,0.3)`,
+    b: `2px 2px 20px rgba(0,0,0,0.2)`,
+    c: `1px 1px 5px ${shadowColor}`,
+    d: `2px 2px 20px ${shadowColor}`,
   };
 
   useEffect(() => {
@@ -97,9 +108,39 @@ export default (props: any) => {
 
   return (
     <div className={styles.page}>
+      <div
+        className={styles.content}
+        style={{
+          background,
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width,
+              height,
+              borderRadius,
+              overflow: 'hidden',
+              boxShadow: shadows[shadow],
+            }}
+          >
+            {widgetComponent}
+          </div>
+        </div>
+      </div>
       <div className={styles.config}>
         <div className={styles.logo}>😋 WIDGET DEV PAGE</div>
-        <div className={styles.desc}>方便你开发部件</div>
+        <div className={styles.desc}>
+          方便你开发 
+          <Dropdown overlay={menu}>
+            <a
+              className="ant-dropdown-link"
+              onClick={(e) => e.preventDefault()}
+            >
+              {' '+id}
+            </a>
+          </Dropdown>
+        </div>
 
         <div>
           <h2 style={{ margin: '20px 0' }}>页面背景</h2>
@@ -121,10 +162,10 @@ export default (props: any) => {
             buttonStyle="solid"
             onChange={(e: any) => setShadow(e.target.value)}
           >
-            <Radio.Button value="a">灰度阴影一</Radio.Button>
-            <Radio.Button value="b">灰度阴影二</Radio.Button>
-            <Radio.Button value="c">弥散阴影一</Radio.Button>
-            <Radio.Button value="d">弥散阴影二</Radio.Button>
+            <Radio.Button value="a">灰度1</Radio.Button>
+            <Radio.Button value="b">灰度2</Radio.Button>
+            <Radio.Button value="c">弥散1</Radio.Button>
+            <Radio.Button value="d">弥散2</Radio.Button>
           </Radio.Group>
           <div>
             <Button
@@ -155,26 +196,6 @@ export default (props: any) => {
             >
               部件商店
             </Button>
-          </div>
-        </div>
-      </div>
-      <div
-        className={styles.content}
-        style={{
-          background,
-        }}
-      >
-        <div>
-          <div
-            style={{
-              width,
-              height,
-              borderRadius,
-              overflow: 'hidden',
-              boxShadow: shadows[shadow],
-            }}
-          >
-            {widgetComponent}
           </div>
         </div>
       </div>
