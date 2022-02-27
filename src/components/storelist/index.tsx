@@ -72,7 +72,7 @@ const StoreList = (props: any) => {
         {!_.isEmpty(keys) ? (
           <div
             className="react-dashboard-widget-waterfall"
-            style={{ columnCount: isMobile ? 1 : 4, padding: 20 }}
+            style={{ columnCount: isMobile ? 1 : 3, padding: 20 }}
           >
             {keys.map((key) => {
               const item = finWidgets[key];
