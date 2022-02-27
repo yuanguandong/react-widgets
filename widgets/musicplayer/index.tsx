@@ -1,18 +1,18 @@
 import type { WidgetIF } from 'react-dashboard-pro';
 import Panel from './component';
 import snapShot from './snapshot.png';
-import { IssuesCloseOutlined } from '@ant-design/icons';
+import { PlayCircleOutlined } from '@ant-design/icons';
 
 export default {
-  name: 'WidgetName',
-  description: 'WidgetDescription',
-  tags: [''],
+  name: 'MusicPlayer',
+  description: 'A MusicPlayer',
+  tags: ['all','list','tool'],
   component: Panel,
   configComponent: null,
   maxLength: 1,
   snapShot,
-  icon: <IssuesCloseOutlined />,
-  iconBackground: '',
+  icon: <PlayCircleOutlined />,
+  iconBackground: '#f00',
   size: {
     defaultWidth: 3,
     defaultHeight: 10,
