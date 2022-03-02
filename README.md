@@ -40,10 +40,7 @@ npm run create xxxx
 # };
 
 # 启动项目
-npm run start
-
-# 访问DEV PAGE
-# localhost:8000#dev?id=xxxx
+npm run dev xxx
 
 # 开发完成，截图替换掉snapshot.png，提交PR到feature分支
 
@@ -119,3 +116,6 @@ export default {
 };
 ```
 
+### 注意
+* 在开发widget的时候一般宽度和高度指定为`100%`即可, 因为widget宽高是由用户在dashboard上拖拽决定的，props里dashboard传过来的 `width` 和 `height` 可以按需使用。
+* widget自身不需编写边框、圆角、阴影等，这些效果可以在dashboard这一层统一定义
