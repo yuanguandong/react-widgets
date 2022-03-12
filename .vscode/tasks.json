@@ -1,66 +1,64 @@
 {
   // 有关 tasks.json 格式的文档，请参见
-    // https://go.microsoft.com/fwlink/?LinkId=733558
-    "version": "2.0.0",
-    "tasks": [
-      //f4
-      {
-        "type": "shell",
-        "command": "git pull gitlab master",
-        "label": "git pull",
-        "problemMatcher": []
-      },
-      //f6
-      {
-        "type": "shell",
-        "command": "git push",
-        "label": "git push",
-        "problemMatcher": []
-      },
-      //f8 start
-      {
-        "type": "shell",
-        "command": "npm start",
-        "label": "start",
-        "problemMatcher": []
-      },
-      //f9 build
-      {
-        "type": "shell",
-        "command": "npm run build && npm publish",
-        "label": "build",
-        "problemMatcher": []
-      },
-      //f10 publish
-      {
-        "type": "shell",
-        "command": "npm publish",
-        "label": "publish",
-        "problemMatcher": []
-      },
-      //f11 my install
-      {
-        "type": "shell",
-        "command": "cd doc && cnpm i",
-        "label": "my install",
-        "problemMatcher": []
-      },
-      //f12 reset
-      {
-        "type": "shell",
-        "command": "cd doc && rm -rf node_modules",
-        "label": "reset",
-        "problemMatcher": []
-      },
-      {
-        "type": "shell",
-        "command": "git checkout master && git merge feature-0-dev && git add . && git commit -m 'merge' && git push",
-        "label": "merge",
-        "problemMatcher": []
-      }
-  
-      
-    ]
-  }
-  
-
+  // https://go.microsoft.com/fwlink/?LinkId=733558
+  "version": "2.0.0",
+  "tasks": [
+    //通用定义
+    //F4
+    {
+      "type": "shell",
+      "command": "git pull",
+      "label": "F4",
+      "problemMatcher": []
+    },
+    //F5
+    {
+      "type": "shell",
+      "command": "git add . && git commit -m 'chore: update' ",
+      "label": "F5",
+      "problemMatcher": []
+    },
+    //F6
+    {
+      "type": "shell",
+      "command": "git push",
+      "label": "F6",
+      "problemMatcher": []
+    },
+    //F8
+    {
+      "type": "shell",
+      "command": "npm start",
+      "label": "F8",
+      "problemMatcher": []
+    },
+    //F9
+    {
+      "type": "shell",
+      "command": "cd server && sh start.sh",
+      "label": "F9",
+      "problemMatcher": []
+    },
+    //F10
+    {
+      "type": "shell",
+      "command": "npm run startserver:ibom",
+      "label": "F10",
+      "problemMatcher": []
+    },
+    //F11
+    {
+      "type": "shell",
+      "command": "npm run startserver:iform",
+      "label": "F11",
+      "problemMatcher": []
+    },
+    //F12
+    {
+      "type": "shell",
+      "command": "npm run startserver:iproject",
+      "label": "F12",
+      "problemMatcher": []
+    },
+  ]
+}
