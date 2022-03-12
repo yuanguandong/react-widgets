@@ -8,6 +8,7 @@ import todo from './todo';
 import profile from './profile';
 import carousel from './carousel';
 import musicplayer from './musicplayer';
+import poetry from './poetry';
 export default {
   clock,
   column,
@@ -18,4 +19,5 @@ export default {
   profile,
   carousel,
   musicplayer,
+  poetry,
 } as WidgetsIF;

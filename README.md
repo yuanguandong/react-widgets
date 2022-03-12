@@ -40,7 +40,7 @@ npm run create xxxx
 # };
 
 # 启动项目
-npm run dev xxx
+npm run dev --id=xxx
 
 # 开发完成，截图替换掉snapshot.png，提交PR到feature分支
 
