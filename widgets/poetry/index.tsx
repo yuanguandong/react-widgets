@@ -6,7 +6,7 @@ import { AlignCenterOutlined } from '@ant-design/icons';
 export default {
   name: '中国古诗',
   description: '唐诗300首等',
-  tags: ['all', 'tools'],
+  tags: ['all', 'tool'],
   component: Panel,
   configComponent: null,
   maxLength: 1,
