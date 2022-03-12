@@ -21,5 +21,5 @@ export default {
     minWidth: 3,
     minHeight: 10,
   },
-  author: '',
+  author: 'Favori',
 } as WidgetIF;
