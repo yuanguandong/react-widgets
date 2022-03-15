@@ -1,4 +1,16 @@
 export default [{
+  id:'-1',
+  name:`碧血丹心`,
+  title:`胡彦斌`,
+  img:`https://myhkw.cn/api/musicPic?picId=109951166606327471&type=wy&size=big`,
+  audio:`https://github.com/yuanguandong/resources/blob/master/mp3/%E7%A2%A7%E8%A1%80%E4%B8%B9%E5%BF%83.mp3?raw=true`
+},{
+  id:'0',
+  name:`半生出走`,
+  title:`胡彦斌`,
+  img:`https://p3.music.126.net/XOROOc8SgfTVyCQypHb7sw==/109951165872947507.jpg?param=300y300`,
+  audio:`https://github.com/yuanguandong/resources/blob/master/mp3/%E5%8D%8A%E7%94%9F%E5%87%BA%E8%B5%B0.mp3?raw=true`
+},{
   id:'1',
   name:`夜曲`,
   title:`周杰伦`,
