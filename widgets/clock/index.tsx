@@ -4,7 +4,7 @@ import snapShot from './snapshot.png';
 import type { WidgetIF } from 'react-dashboard-pro';
 
 export default {
-  name: 'Clock',
+  name: 'clock',
   description: 'a clock',
   tags: ['all', 'system'],
   component: Panel,

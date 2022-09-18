@@ -4,9 +4,9 @@ import snapShot from './snapshot.png';
 import { PlayCircleOutlined } from '@ant-design/icons';
 
 export default {
-  name: 'MusicPlayer',
+  name: 'musicPlayer',
   description: 'A MusicPlayer',
-  tags: ['all','list','tool'],
+  tags: ['all', 'list', 'tool'],
   component: Panel,
   configComponent: null,
   maxLength: 1,

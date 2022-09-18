@@ -4,7 +4,7 @@ import snapShot from './snapshot.png';
 import type { WidgetIF } from 'react-dashboard-pro';
 
 export default {
-  name: 'Profile',
+  name: 'profile',
   description: 'a Profile',
   tags: ['all', 'system'],
   component: Panel,

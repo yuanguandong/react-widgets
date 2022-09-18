@@ -4,7 +4,7 @@ import snapShot from './snapshot.png';
 import { AlignCenterOutlined } from '@ant-design/icons';
 
 export default {
-  name: '中国古诗',
+  name: 'poetry',
   description: '唐诗300首等',
   tags: ['all', 'tool'],
   component: Panel,

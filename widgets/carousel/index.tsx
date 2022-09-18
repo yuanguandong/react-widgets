@@ -4,9 +4,9 @@ import snapShot from './snapshot.png';
 import { PictureOutlined } from '@ant-design/icons';
 
 export default {
-  name: 'Carousel',
+  name: 'carousel',
   description: '轮播导航',
-  tags: ['all','list','guide'],
+  tags: ['all', 'list', 'guide'],
   component: Panel,
   configComponent: null,
   maxLength: 1,

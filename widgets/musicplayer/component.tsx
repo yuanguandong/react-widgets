@@ -113,7 +113,7 @@ const Widget = (props: any) => {
 
   //滑动条
   const sliderChange = (value: number) => {
-    const currentTime = (instances[song.id].duration * value) / 100;
+    const currentTime = (instances[song.id]?.duration * value) / 100;
     instances[song.id].currentTime = currentTime;
   };
 

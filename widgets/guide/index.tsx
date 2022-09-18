@@ -4,9 +4,9 @@ import snapShot from './snapshot.png';
 import type { WidgetIF } from 'react-dashboard-pro';
 
 export default {
-  name: 'Guide',
+  name: 'guide',
   description: 'Guide panel, navigation',
-  tags: ['all','panel'],
+  tags: ['all', 'panel'],
   component: Panel,
   configComponent: null,
   maxLength: 2,
@@ -21,5 +21,5 @@ export default {
     minWidth: 2,
     minHeight: 4,
   },
-  author:'Favori'
+  author: 'Favori'
 } as WidgetIF
